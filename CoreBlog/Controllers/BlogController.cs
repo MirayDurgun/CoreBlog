@@ -17,6 +17,7 @@ namespace CoreDemo.Controllers
         }
 		public IActionResult BlogReadAll(int id)
         {
+            //idye göre detayları getirecek
             var values=bm.GetBlogById(id);
             return View(values);
         }

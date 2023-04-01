@@ -8,9 +8,7 @@
 	Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<body>
+
 	<!--//banner-->
 <section class="banner-bottom">
 	<!--/blog-->
@@ -58,7 +56,7 @@
 					</div>
 					}
 				<!--YORUMLAR-->
-					@await Html.PartialAsync("~/Views/Comment/CommentListByBlog.cshtml")
+					@await Component.InvokeAsync("CommentList")
 					<!--Yorum ekleme-->
 					@await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")
 				<!---->
@@ -186,5 +184,3 @@
 	</div>
 </section>
 <!--//main-->
-</body>
-</html>

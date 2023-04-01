@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramwork;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CoreBlog.Controllers
 {
 	public class CommentController : Controller
 	{
+		CommentManager cm = new CommentManager(new EfCommentRepository());
+
 		public IActionResult Index()
 		{
 			return View();
@@ -12,9 +16,11 @@ namespace CoreBlog.Controllers
 		{
 			return PartialView();
 		}
-		public PartialViewResult CommentListByBlog()
+		public PartialViewResult CommentListByBlog(int id)
 		{
-			return PartialView();
+			//idye göre işlem gerçekleştireceğiz
+			var values=cm.GetList(id);
+			return PartialView(values);
 		}
 	}
 }
