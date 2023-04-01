@@ -19,7 +19,7 @@ namespace DataAccessLayer.EntityFramwork
             {
                 return c.Blogs.Include(x => x.Category).ToList();
                 //Include otomatik usinglenmezse ctrl . ile vs.. yukarıya using Microsoft.EntityFrameworkCore; yazıyoruz
-                //Include(x => x.Category).ToList(); kodunn bu kısmında hangi entity Include içine dahil edilecese yazılır.
+                //Include(x => x.Category).ToList(); kodunn bu kısmında hangi entity Include içine dahil edilecekse yazılır.
 
             }
 

@@ -15,5 +15,11 @@ namespace CoreDemo.Controllers
             return View(values);
             //geriye valuesi döndür
         }
-    }
+		public IActionResult BlogReadAll(int id)
+        {
+            var values=bm.GetBlogById(id);
+            return View(values);
+        }
+
+	}
 }
