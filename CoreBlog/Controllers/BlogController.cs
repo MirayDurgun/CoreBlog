@@ -16,8 +16,10 @@ namespace CoreDemo.Controllers
             //geriye valuesi döndür
         }
 		public IActionResult BlogReadAll(int id)
-        {
+		{            
             //idye göre detayları getirecek
+
+			ViewBag.i = id;
             var values=bm.GetBlogById(id);
             return View(values);
         }
