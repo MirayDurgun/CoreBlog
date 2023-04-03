@@ -20,6 +20,8 @@ namespace EntityLayer.Concrete
         public bool BlogStatus { get; set; }
         public int CategoryID { get; set; } //ilişkilendirilen tablonun idsi
         public Category Category { get; set; } //ilişki içerisine alınacak olan tablo türünde olmalı
-        public List<Comment> Comments { get; set; }
+		public int WriterID { get; set; } 
+		public Writer Writer { get; set; } 
+		public List<Comment> Comments { get; set; }
     }
 }
