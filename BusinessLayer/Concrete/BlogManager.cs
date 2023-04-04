@@ -57,5 +57,11 @@ namespace BusinessLayer.Concrete
 		{
 			return _blogDal.GetListAll();
 		}
+		public List<Blog>GetLast3Blog()
+		{
+			return _blogDal.GetListAll().Take(3).ToList();
+			//footerda son postların hepsini yansıtmak yerine sadece 
+			//3 tane getirmesini istiyoruz bu nedenle yeni mothod oluşturduk
+		}
 	}
 }
