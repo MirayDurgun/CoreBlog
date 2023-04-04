@@ -7,9 +7,8 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Abstract
 {
-	public interface IWriterService
+	public interface INewsLetterService
 	{
-		//sadece ekleme işlemi gerçekleştireceğiz, kayıt olma işlemi için
-		void WriterAdd(Writer writer);
+		void AddNewsLetter(NewsLetter newsLetter);
 	}
 }

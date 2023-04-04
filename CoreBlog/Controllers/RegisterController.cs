@@ -54,14 +54,9 @@ namespace CoreBlog.Controllers
 				foreach (var item in results.Errors)
 				{
 					ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-
 				}
 			}
 			return View();
-
-
-
-
 		}
 	}
 }

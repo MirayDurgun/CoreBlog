@@ -18,12 +18,12 @@ namespace BusinessLayer.Concrete
 		}
 		public void CommentAdd(Comment comment)
 		{
-			throw new NotImplementedException();
+			_commentDal.Insert(comment);
 		}
 
 		public List<Comment> GetList(int id)
 		{
-			return _commentDal.GetListAll(x=>x.BlogID==id);
+			return _commentDal.GetListAll(x => x.BlogID == id);
 		}
 	}
 }
