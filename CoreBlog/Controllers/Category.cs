@@ -13,7 +13,7 @@ namespace CoreDemo.Controllers
         //(new EfCategoryRepository()); tanımladık.
         public IActionResult Index()
         {
-            var values=cm.GetAllCategories();
+            var values=cm.GetList();
             //cm. içindeki bütün metotlara erişim sağlayabiliriz
             //GetAllCategories hepsini getir.
             return View(values);

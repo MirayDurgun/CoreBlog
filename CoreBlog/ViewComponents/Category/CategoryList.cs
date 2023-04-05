@@ -9,7 +9,7 @@ namespace CoreBlog.ViewComponents.Category
 		CategoryManager cm = new CategoryManager(new EfCategoryRepository());
 		public IViewComponentResult Invoke()
 		{
-			var values = cm.GetAllCategories();
+			var values = cm.GetList();
 			return View(values);
 		}
 
