@@ -20,8 +20,8 @@
 	@Html.TextBoxFor(x=>x.BlogThumbnailImage,new{@class="form-control"})
 	<br />
 	@Html.Label("Kategori")
-	@Html.TextBoxFor(x=>x.CategoryID,new{@class="form-control"})
-	@Html.ValidationMessageFor(x=>x.CategoryID)
+	@Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cv,new{@class="form-control"})
+	//dropdown list olarak yaptık viewbagten gelen değeri yansıttık
 	<br />
 	@Html.Label("Blog İçeriği")
 	@Html.TextAreaFor(x=>x.BlogContent,3,10,new{@class="form-control"})

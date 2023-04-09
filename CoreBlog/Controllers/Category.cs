@@ -2,7 +2,7 @@
 using DataAccessLayer.EntityFramwork;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreDemo.Controllers
+namespace CoreBlog.Controllers
 {
     public class Category : Controller
     {

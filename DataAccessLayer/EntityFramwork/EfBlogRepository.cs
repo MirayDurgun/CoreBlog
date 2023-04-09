@@ -11,19 +11,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.EntityFramwork
 {
-    public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
-    {
-        public List<Blog> GetListWithCategory()
-        {
-            using (var c = new Context()) //Contexti c olarak belirttik
-            {
-                return c.Blogs.Include(x => x.Category).ToList();
-                //Include otomatik usinglenmezse ctrl . ile vs.. yukarıya using Microsoft.EntityFrameworkCore; yazıyoruz
-                //Include(x => x.Category).ToList(); kodunn bu kısmında hangi entity Include içine dahil edilecekse yazılır.
+	public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
+	{
+		public List<Blog> GetListWithCategory()
+		{
+			using (var c = new Context()) //Contexti c olarak belirttik
+			{
+				return c.Blogs.Include(x => x.Category).ToList();
+				//Include otomatik usinglenmezse ctrl . ile vs.. yukarıya using Microsoft.EntityFrameworkCore; yazıyoruz
+				//Include(x => x.Category).ToList(); kodunn bu kısmında hangi entity Include içine dahil edilecekse yazılır.
 
-            }
+			}
 
-        }
+		}
 
-    }
+		public List<Blog> GetListWithCategoryByWriter(int id)
+		{
+			using (var c = new Context())
+			{
+				return c.Blogs.Include(x => x.Category).Where(x => x.WriterID == id).ToList();
+
+			}
+		}
+	}
 }

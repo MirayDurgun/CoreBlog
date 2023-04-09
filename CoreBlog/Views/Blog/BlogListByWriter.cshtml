@@ -13,23 +13,31 @@
 		<th>Oluşturma Tarihi</th>
 		<th>Kategori</th>
 		<th>Durum</th>
-		<th>Sil</th>
+		<th> Sil</th>
 		<th>Güncelle</th>
 	</tr>
 	@foreach (var item in Model)
 	{
+
 		//writer idye göre getirir
 		<tr>
 			<th>@item.BlogID</th>
 			<th>@item.BlogTitle</th>
-			<th>@item.BlogCreateDate</th>
-			<th>@item.CategoryID</th>
-			<th>@item.BlogStatus</th>
-			<th><a href="#" class="btn btn-danger">Sil</a></th>
-			<th><a href="#" class="btn btn-warning">Düzenle</a></th>
+			<th>@(((DateTime)item.BlogCreateDate).ToString("d"))</th>
+			<th>@item.Category.CategoryName</th>
+			@if (item.BlogStatus == true)
+			{
+				<td><div class="" style="color:limegreen;">Aktif</div></td>
+			}
+			else
+			{
+				<td><div class="" style="color:red;">Pasif</div></td>
+			}
+			<th><a href="/Blog/DeleteBlog/@item.BlogID" class="btn btn-danger">Sil</a></th>
+			<th><a href="/Blog/EditBlog/@item.BlogID" class="btn btn-warning">Düzenle</a></th>
 
 		</tr>
 	}
 </table>
 <br />
-<a href="#" class="btn btn-primary">Yeni Blog Oluştur</a>
+<a href="/Blog/BlogAdd/" class="btn btn-primary">Yeni Blog Oluştur</a>
