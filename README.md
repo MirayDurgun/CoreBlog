@@ -2,15 +2,13 @@
 Asp.Net Core 5.0 Proje Kampı 
 
  
-  <img src="https://img.shields.io/badge/-Instagram-purple?style=flat-square&labelColor=purple&logo=instagram&logoColor=white&link=LINK-DO-SEU-INSTAGRAM"/>
+  <img src="https://img.shields.io/badge/-Instagram-purple?style=flat-square&labelColor=purple&logoColor=white"/>
 <a href="https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci" alt="CoreDemo">
-  <img src="https://img.shields.io/badge/-Instagram-purple?style=flat-square&labelColor=purple&logo=instagram&logoColor=white&link=LINK-DO-SEU-INSTAGRAM"/></a>
+  <img src="https://img.shields.io/badge/-purple?style=flat-square&labelColor=purple&logo=instagram&logoColor=white"/></a>
 
   [![Kurs Linki](https://img.shields.io/badge/-Instagram-purple?style=flat-square&labelColor=purple&logo=instagram&logoColor=white&link=LINK-DO-SEU-INSTAGRAM)](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)
   
-<a href=([https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci](https://img.shields.io/badge/-Instagram-purple?style=flat-square&labelColor=purple&logo=instagram&logoColor=white&link=LINK-DO-SEU-INSTAGRAM))(https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci) alt="CoreDemo">
 
-   <img src="https://img.shields.io/badge/-Instagram-purple?style=flat-square&labelColor=purple&logo=instagram&logoColor=white&link=LINK-DO-SEU-INSTAGRAM"/>
   
   [![Kurs Linki](https://img.shields.io/badge/Kurs%20Linki%20-izlemek%20için%20tıklayın-purple)](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)
 
