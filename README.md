@@ -1,5 +1,7 @@
 # CoreBlog
 Asp.Net Core 5.0 Proje Kampı 
+<a href="[https://www.instagram.com/miraaydurgun/](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)" alt="CoreBlog">
+  <img src="https://img.shields.io/badge/-Kurs Videosu-purple?style=flat-square&labelColor=purple&logoColor=white&link=LINK-DO-SEU-INSTAGRAM"/></a>
 ### Kamp Youtube Kanalı: https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci
 
 ## Proje Hakkında: 
