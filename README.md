@@ -1,16 +1,7 @@
 # CoreBlog
 Asp.Net Core 5.0 Proje Kampı 
 
- 
-  <img src="https://img.shields.io/badge/-Kurs Linki-purple?style=flat-square&labelColor=purple&logoColor=white"/>
-<a href="https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci" alt="CoreDemo">
-  <img src="https://img.shields.io/badge/-Kurs Linki-purple?style=flat-square&labelColor=purple&logoColor=white"/></a>
-
-  [![Kurs Linki](https://img.shields.io/badge/-Kurs-Linki-purple?style=flat-square&labelColor=purple&&logoColor=white&link=https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)
-  
-
-  
-  [![Kurs Linki](https://img.shields.io/badge/Kurs%20Linki%20-izlemek%20için%20tıklayın-purple)](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)
+  [![Kurs Linki](https://img.shields.io/badge/Kurs%20Linki%3-izlemek%20için%20tıklayın-purple)](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)
 
 
 ## Proje Hakkında: 
