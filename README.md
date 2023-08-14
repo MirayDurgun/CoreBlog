@@ -1,7 +1,7 @@
 # CoreBlog
 Asp.Net Core 5.0 Proje Kampı 
 
-  [![Kurs Linki](https://img.shields.io/badge/Kurs%20Linki%3-izlemek%20için%20tıklayın-purple)](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)
+  [![Kurs Linki](https://img.shields.io/badge/Kurs%20Linki%20-izlemek%20için%20tıklayın-purple)](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNkinaVhPqPZG0ubaLN63ci)
 
 
 ## Proje Hakkında: 
