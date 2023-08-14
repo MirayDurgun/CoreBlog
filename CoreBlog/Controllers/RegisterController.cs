@@ -40,7 +40,7 @@ namespace CoreBlog.Controllers
 			{
 				p.WriterStatus = true;
 				p.WriterAbout = "Deneme Test";
-				wm.WriterAdd(p); //parametreden gelen değeri wm içine ekler
+				wm.TAdd(p); //parametreden gelen değeri wm içine ekler
 				return RedirectToAction("Index", "Blog");
 
 
