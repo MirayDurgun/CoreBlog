@@ -40,12 +40,12 @@ namespace BusinessLayer.Concrete
 
 		public void TDelete(Writer t)
 		{
-			throw new NotImplementedException();
+			_writerDal.Delete(t);
 		}
 
 		public void TUpdate(Writer t)
 		{
-			throw new NotImplementedException();
+			_writerDal.Update(t);
 		}
         public Writer TGetById(int id)
         {
