@@ -47,5 +47,9 @@ namespace BusinessLayer.Concrete
 		{
 			throw new NotImplementedException();
 		}
-	}
+        public Writer TGetById(int id)
+        {
+			return _writerDal.GetById(id);
+        }
+    }
 }
