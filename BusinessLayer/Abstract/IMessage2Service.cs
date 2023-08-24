@@ -11,6 +11,5 @@ namespace BusinessLayer.Abstract
     public interface IMessage2Service:IGenericDal<Message2>
     {
         List<Message2> GetInboxByWriter(int id);
-
     }
 }
