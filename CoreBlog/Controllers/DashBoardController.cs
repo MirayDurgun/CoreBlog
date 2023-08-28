@@ -7,7 +7,6 @@ namespace CoreBlog.Controllers
 {
 	public class DashBoardController : Controller
 	{
-		[AllowAnonymous]
 		public IActionResult Index()
 		{
 			Context c=new Context();
@@ -16,7 +15,6 @@ namespace CoreBlog.Controllers
 			ViewBag.v3=c.Categories.Count();
 			return View();
 		}
-		[AllowAnonymous]
 		public IActionResult v()
 		{
 			return View();
