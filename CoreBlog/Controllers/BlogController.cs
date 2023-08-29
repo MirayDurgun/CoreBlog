@@ -91,7 +91,7 @@ namespace CoreBlog.Controllers
 		{
 			var blogvalue = bm.GetById(id);
 			//blogvalue t(generic)ye karşılık gelir
-			//çnce silinecek değeri bul
+			//önce silinecek değeri bul
 			bm.TDelete(blogvalue);
 			//sonra sil
 			//blogvalue gönderilen idye karşılık gelen satırın tamamnı hafızaya alır

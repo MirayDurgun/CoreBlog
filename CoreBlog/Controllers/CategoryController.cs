@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreBlog.Controllers
 {
-    public class Category : Controller
+    public class CategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         //manageri çağırıp usingledik
