@@ -46,7 +46,7 @@
 							<ul class="dropdown-menu dropdown-messages">
 								<li>
 									<div class="dropdown-messages-box">
-										<a class="dropdown-item float-left" href="profile.html">
+										<a class="dropdown-item float-left" href="~/inspinia-gh-pages/profile.html">
 											<img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a7.jpg">
 										</a>
 										<div class="media-body">
@@ -59,8 +59,8 @@
 								<li class="dropdown-divider"></li>
 								<li>
 									<div class="dropdown-messages-box">
-										<a class="dropdown-item float-left" href="profile.html">
-											<img alt="image" class="rounded-circle" src="img/a4.jpg">
+										<a class="dropdown-item float-left" href="~/inspinia-gh-pages/profile.html">
+											<img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a4.jpg">
 										</a>
 										<div class="media-body ">
 											<small class="float-right text-navy">5h ago</small>
@@ -85,7 +85,7 @@
 								<li class="dropdown-divider"></li>
 								<li>
 									<div class="text-center link-block">
-										<a href="mailbox.html" class="dropdown-item">
+										<a href="~/inspinia-gh-pages/mailbox.html" class="dropdown-item">
 											<i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
 										</a>
 									</div>
@@ -116,7 +116,7 @@
 								</li>
 								<li class="dropdown-divider"></li>
 								<li>
-									<a href="grid_options.html" class="dropdown-item">
+									<a href="~/inspinia-gh-pages/grid_options.html" class="dropdown-item">
 										<div>
 											<i class="fa fa-upload fa-fw"></i> Server Rebooted
 											<span class="float-right text-muted small">4 minutes ago</span>
@@ -126,7 +126,7 @@
 								<li class="dropdown-divider"></li>
 								<li>
 									<div class="text-center link-block">
-										<a href="notifications.html" class="dropdown-item">
+										<a href="~/inspinia-gh-pages/notifications.html" class="dropdown-item">
 											<strong>See All Alerts</strong>
 											<i class="fa fa-angle-right"></i>
 										</a>
@@ -137,7 +137,7 @@
 
 
 						<li>
-							<a href="login.html">
+							<a href="~/inspinia-gh-pages/login.html">
 								<i class="fa fa-sign-out"></i> Log out
 							</a>
 						</li>
@@ -150,7 +150,7 @@
 					<h2>Static Tables</h2>
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item">
-							<a href="index.html">Home</a>
+							<a href="~/inspinia-gh-pages/index.html">Home</a>
 						</li>
 						<li class="breadcrumb-item">
 							<a>Tables</a>
@@ -205,6 +205,7 @@
 			});
 		});
 	</script>
+	@await RenderSectionAsync("scripts")
 
 </body>
 
