@@ -17,7 +17,7 @@ namespace DataAccessLayer.Concrete
         {
             //2 şekilde bağlantı kurulur 
             //1.
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; database=CoreBlogDb; integrated security=true;");//2 adet ters slaş olmalı
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; database=CoreBlogDb; integrated security=true;");//2 adet "\\" olmalı
                                                                                                                           //2.
                                                                                                                           // optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB; database=CoreBlogDb; integrated security=true;");
             /*Bu şekilde de bağlantı sağlanabilir, connectionString  hangi ana makine'ye bağlantı yapılacağını,
