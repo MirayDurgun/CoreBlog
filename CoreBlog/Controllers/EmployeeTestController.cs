@@ -18,7 +18,7 @@ namespace CoreBlog.Controllers
             //göndermiş olduğumuz apinin adresinde(localhost) bulunan adrese istekte bulunacağız
             //ve bu isteğe karşılık gelen değerleri listeleyeceğiz
             var httpClient = new HttpClient();
-            var responseMessage = await httpClient.GetAsync(""); //adresi yaz!HTTP GET İsteği Gönderme
+            var responseMessage = await httpClient.GetAsync("https://localhost:44329/api/Default"); //HTTP GET İsteği Gönderme
             var jsonString = await responseMessage.Content.ReadAsStringAsync(); //HTTP yanıtı okunuyor
             var values = JsonConvert.DeserializeObject<List<Class1>>(jsonString); //JSON veri, belirtilen Class1 sınıfına uygun bir şekilde deserialize ediliyor.
             return View(values);
@@ -36,7 +36,7 @@ namespace CoreBlog.Controllers
             var httpClient = new HttpClient();
             var jsonEmployee = JsonConvert.SerializeObject(p);
             StringContent content = new StringContent(jsonEmployee, Encoding.UTF8, "application/json");
-            var rensonseMessage = await httpClient.PostAsync("", content);
+            var rensonseMessage = await httpClient.PostAsync("https://localhost:44329/api/Default\r\n", content);
             if (rensonseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -48,7 +48,7 @@ namespace CoreBlog.Controllers
         public async Task<IActionResult> EditEmployee(int id)
         {
             var httpClient = new HttpClient();
-            var rensonseMessage = await httpClient.GetAsync("" + id);
+            var rensonseMessage = await httpClient.GetAsync("https://localhost:44329/api/Default\r\n" + id);
             if (rensonseMessage.IsSuccessStatusCode)
             {
                 var jsonEmployee = await rensonseMessage.Content.ReadAsStringAsync();
@@ -64,7 +64,7 @@ namespace CoreBlog.Controllers
             var httpClient = new HttpClient();
             var jsonEmployee = JsonConvert.SerializeObject(p);
             StringContent content = new StringContent(jsonEmployee, Encoding.UTF8, "application/json");
-            var rensonseMessage = await httpClient.PutAsync("", content);
+            var rensonseMessage = await httpClient.PutAsync("https://localhost:44329/api/Default\r\n", content);
             if (rensonseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -75,7 +75,7 @@ namespace CoreBlog.Controllers
         public async Task<IActionResult> DeleteEmployee(int id)
         {
             var httpClient = new HttpClient();
-            var rensonseMessage = await httpClient.DeleteAsync("" + id);
+            var rensonseMessage = await httpClient.DeleteAsync("https://localhost:44329/api/Default\r\n" + id);
             if (rensonseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
