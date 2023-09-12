@@ -28,30 +28,46 @@
         <div>
             <div>
 
-                <h1 class="logo-name">IN+</h1>
+                <h3 class="logo-name">IN+</h3>
 
             </div>
             <h3>Kayıt Ekranı</h3>
-            <p>Create account to see it in action.</p>
-            <form class="m-t" role="form" action="login.html">
+            <p>Yeni bir hesap oluşturun</p>
+            <form class="m-t" role="form" asp-action="Index">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" required="">
+                    <span asp-validation-for="@Model.nameSurname" class="text-danger"></span> @*modelde oluşturduğumuz error mesajlarını gösterir*@
+                    <input type="text" class="form-control" asp-for="@Model.nameSurname" placeholder="Adınız Soyadınız">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" required="">
+                    <span asp-validation-for="@Model.mail" class="text-danger"></span>
+                    <input type="email" class="form-control" asp-for="@Model.mail" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
+                    <span asp-validation-for="@Model.userName" class="text-danger"></span>
+                    <input type="text" class="form-control" asp-for="@Model.userName" placeholder="Kullanıcı Adı">
                 </div>
                 <div class="form-group">
-                    <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
+                    <span asp-validation-for="@Model.password" class="text-danger"></span>
+                    <input type="password" class="form-control" asp-for="@Model.password" placeholder="Şifre">
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+                <div class="form-group">
+                    <span asp-validation-for="@Model.confirmPassword" class="text-danger"></span>
+                    <input type="password" class="form-control" asp-for="@Model.confirmPassword" placeholder="Şifre Tekrar">
+                </div>
 
-                <p class="text-muted text-center"><small>Already have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="login.html">Login</a>
+                <div class="form-group">
+                    <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Kullanım şartlarını okudum, kabul ediyorum. </label></div>
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Kayot Ol</button>
+
+                <p class="text-muted text-center"><small>Bir hesabınız var mı?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="/RegisterUser/Login/">Giriş Yap</a>
+
+                <div class="text-danger" asp-validation-summary="ModelOnly">
+                    @*bu şu işe yarar diyelimdeki şifrede bir karakter büyük harf olmalı ve biz yazmadık kayıt ola tıklayınca aşağıda listeler bunu startupta yönetiyoruz false true vererek*@
+                </div>
             </form>
-            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+            <p class="m-t"> <small>Asp.Net Core 5.0 Proje Kampı | Tüm hakları saklıdır.  &copy; @DateTime.Now.Year</small> </p>
         </div>
     </div>
 
@@ -70,5 +86,4 @@
         });
     </script>
 </body>
-
 </html>

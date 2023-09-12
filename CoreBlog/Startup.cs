@@ -32,9 +32,13 @@ namespace CoreBlog
         {
             //Identity
             services.AddDbContext<Context>();
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+            services.AddIdentity<AppUser, AppRole>(x =>
+            {
+                x.Password.RequireUppercase = false; //büyük harf mecburiyeti kalkar
+                x.Password.RequireNonAlphanumeric = false; 
+            }).AddEntityFrameworkStores<Context>();
 
- 
+
             services.AddControllersWithViews();
 
             services.AddSession();
