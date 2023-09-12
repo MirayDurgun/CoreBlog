@@ -19,7 +19,7 @@ namespace CoreBlog.Controllers
         [HttpPost]
         public IActionResult SubscribeMail(NewsLetter p)
         {
-            p.MailStatus = true; 
+            p.MailStatus = true;
             nm.AddNewsLetter(p);
             return PartialView();
         }

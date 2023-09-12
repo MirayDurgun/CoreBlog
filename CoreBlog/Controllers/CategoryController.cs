@@ -13,7 +13,7 @@ namespace CoreBlog.Controllers
         //(new EfCategoryRepository()); tanımladık.
         public IActionResult Index()
         {
-            var values=cm.GetList();
+            var values = cm.GetList();
             //cm. içindeki bütün metotlara erişim sağlayabiliriz
             //GetAllCategories hepsini getir.
             return View(values);

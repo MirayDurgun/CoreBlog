@@ -16,7 +16,7 @@ namespace CoreBlog.Controllers
         }
         public IActionResult AllNotification()
         {
-            var values=nm.GetList();
+            var values = nm.GetList();
             return View(values);
         }
     }
