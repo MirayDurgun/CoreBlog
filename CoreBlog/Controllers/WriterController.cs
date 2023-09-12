@@ -78,12 +78,19 @@ namespace CoreBlog.Controllers
             values.NameSurname = model.nameSurname;
             values.UserName = model.userName;
             values.ImageUrl = model.imageUrl;
+            //values.PasswordHash = _userManager.PasswordHasher.HashPassword(values, model.password);
+            if (!model.ChangePassword)
+            {
+                values.PasswordHash = _userManager.PasswordHasher.HashPassword(values, model.password);
+            }
+
             var result = await _userManager.UpdateAsync(values);
+           
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Dashboard");
             }
-            return View("Index");
+            return RedirectToAction("Index","Login");
 
         }
         [AllowAnonymous]
@@ -117,8 +124,5 @@ namespace CoreBlog.Controllers
             return View("Index", "Dashboard");
         }
     }
-
-
-
 }
 

@@ -6,5 +6,7 @@
         public string mail { get; set; }
         public string userName { get; set; }
         public string imageUrl { get; set; }
+        public string password{ get; set; }
+        public bool ChangePassword { get; set; }
     }
 }

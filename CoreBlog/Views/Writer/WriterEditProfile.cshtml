@@ -28,10 +28,17 @@
                     <input type="text" asp-asp-for="@Model.imageUrl" class="form-control">
                 </div>
 
-                @*                     <div class="form-group">
-                <label for="exampleInputPassword4">Şifre</label>
-                @* <input type="text" asp-asp-for="@Model.pas" class="form-control">
-                </div> *@
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Yeni Şifre</label>
+                    <input type="text" asp-asp-for="@Model.password" class="form-control">
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="flexCheckChecked" asp-for="@Model.ChangePassword">
+                    <label for="flexCheckChecked">
+                        Şifremi Değiştirmek İstemiyorum
+                    </label>
+                </div>
 
 
 
@@ -55,7 +62,7 @@
 
 
                 <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
-                <button class="btn btn-light">İptal</button>
+                <button class="btn btn-light" asp-action="Index" asp-controller="Dashboard">İptal</button>
             </form>
         </div>
     </div>
