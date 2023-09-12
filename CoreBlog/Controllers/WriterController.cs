@@ -1,24 +1,32 @@
 ﻿using BusinessLayer.Concrete;
-using BusinessLayer.ValidationsRules;
 using CoreBlog.Models;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramwork;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CoreBlog.Controllers
 {
     public class WriterController : Controller
     {
         WriterManager wm = new WriterManager(new EfWriterRepository());
+        UserManager userManager = new UserManager(new EfUserRepository());
+
+
+        private readonly UserManager<AppUser> _userManager;
+
+        public WriterController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
 
         [Authorize]
-
         public IActionResult Index()
         {
             var userMail = User.Identity.Name;
@@ -57,9 +65,9 @@ namespace CoreBlog.Controllers
             Context c = new Context();
             var userName = User.Identity.Name;
             var userMail = c.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
-            var writerID = c.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterID).FirstOrDefault();
-            var writervalues = wm.TGetById(writerID);
-            return View(writervalues);
+            var id = c.Users.Where(x => x.Email == userMail).Select(y => y.Id).FirstOrDefault();
+            var values = userManager.GetById(id);
+            return View(values);
         }
         [HttpPost]
         public IActionResult WriterEditProfile(Writer p)
