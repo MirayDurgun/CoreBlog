@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DataAccessLayer.Concrete
 {
     //bağlantı adresi tanımlanacak bu kısımda
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
 
     /*DbContext clasından miras alıyor
       DbContext sınıfını kullanabilmek için EntityFrameworkCore paketi dahil edilmeli
