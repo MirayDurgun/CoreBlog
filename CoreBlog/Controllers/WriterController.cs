@@ -60,20 +60,30 @@ namespace CoreBlog.Controllers
             return PartialView();
         }
         [HttpGet]
-        public IActionResult WriterEditProfile()
+        public async Task<IActionResult> WriterEditProfile()
         {
-            Context c = new Context();
-            var userName = User.Identity.Name;
-            var userMail = c.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
-            var id = c.Users.Where(x => x.Email == userMail).Select(y => y.Id).FirstOrDefault();
-            var values = userManager.GetById(id);
-            return View(values);
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            UserUpdateViewModel model = new UserUpdateViewModel();
+            model.mail = values.Email;
+            model.nameSurname = values.NameSurname;
+            model.userName = values.UserName;
+            model.imageUrl = values.ImageUrl;
+            return View(model);
         }
         [HttpPost]
-        public IActionResult WriterEditProfile(Writer p)
+        public async Task<IActionResult> WriterEditProfile(UserUpdateViewModel model)
         {
-            wm.TUpdate(p);
-            return RedirectToAction("Index", "Dashboard");
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            values.Email = model.mail;
+            values.NameSurname = model.nameSurname;
+            values.UserName = model.userName;
+            values.ImageUrl = model.imageUrl;
+            var result = await _userManager.UpdateAsync(values);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+            return View("Index");
 
         }
         [AllowAnonymous]
