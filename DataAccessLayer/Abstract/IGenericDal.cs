@@ -18,7 +18,6 @@ namespace DataAccessLayer.Abstract
         List<T> GetListAll(); //void yok
 						  //GetAll da yazılabilir
 		T GetById(int id);  //dışarıdan id parametresi alır.
-        List<T> GetListAll(Expression<Func<T, bool>> filter); 
-        //şartlı listeleme işlemlerinde kullanılan bir yapıdır
+        List<T> GetListAll(Expression<Func<T, bool>> filter);
     }
 }

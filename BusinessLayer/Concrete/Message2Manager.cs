@@ -18,11 +18,6 @@ namespace BusinessLayer.Concrete
             _message2Dal = message2Dal;
         }
 
-        public void Delete(Message2 t)
-        {
-            _message2Dal.Delete(t);
-        }
-
         public Message2 GetById(int id)
         {
             return _message2Dal.GetById(id);
@@ -30,25 +25,30 @@ namespace BusinessLayer.Concrete
 
         public List<Message2> GetInboxByWriter(int id)
         {
-            return _message2Dal.GetListWithMessageByWriter(id);
+            return _message2Dal.GetInboxWithMessageByWriter(id);
         }
 
-        public List<Message2> GetListAll()
+        public List<Message2> GetList()
         {
             return _message2Dal.GetListAll();
         }
 
-        public List<Message2> GetListAll(Expression<Func<Message2, bool>> filter)
+        public List<Message2> GetSendboxByWriter(int id)
         {
-            throw new NotImplementedException();
+            return _message2Dal.GetSendboxWithMessageByWriter(id);
         }
 
-        public void Insert(Message2 t)
+        public void TAdd(Message2 t)
         {
             _message2Dal.Insert(t);
         }
 
-        public void Update(Message2 t)
+        public void TDelete(Message2 t)
+        {
+            _message2Dal.Delete(t);
+        }
+
+        public void TUpdate(Message2 t)
         {
             _message2Dal.Update(t);
         }
