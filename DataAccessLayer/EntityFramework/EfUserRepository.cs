@@ -7,10 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EntityFramwork
+namespace DataAccessLayer.EntityFramework
 {
-    public class EfNotificationRepository:GenericRepository<Notification>, INotificationDal
+    public class EfUserRepository : GenericRepository<AppUser>, IUserDal
     {
-
     }
 }

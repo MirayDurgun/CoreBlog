@@ -7,7 +7,7 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 
-namespace DataAccessLayer.EntityFramwork
+namespace DataAccessLayer.EntityFramework
 {
     public class EfCategoryRepository:GenericRepository<Category>,ICategoryDal
     {

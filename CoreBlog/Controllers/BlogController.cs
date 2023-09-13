@@ -4,7 +4,7 @@ using System.Linq;
 using BusinessLayer.Concrete;
 using BusinessLayer.ValidationsRules;
 using DataAccessLayer.Concrete;
-using DataAccessLayer.EntityFramwork;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
@@ -41,9 +41,10 @@ namespace CoreBlog.Controllers
 
         public IActionResult BlogListByWriter()
         {
-            //writer idye göre getirir
-            var userMail = User.Identity.Name;
+            var userName = User.Identity.Name;
+            var userMail = c.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
             var writerID = c.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterID).FirstOrDefault();
+
             var values = bm.GetListWithCategoryByWriterBm(writerID);
             return View(values);
         }
@@ -68,7 +69,8 @@ namespace CoreBlog.Controllers
         [HttpPost]
         public IActionResult BlogAdd(Blog p)
         {
-            var userMail = User.Identity.Name;
+            var userName = User.Identity.Name;
+            var userMail = c.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
             var writerID = c.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterID).FirstOrDefault();
 
             BlogValidator bv = new BlogValidator();
@@ -122,8 +124,10 @@ namespace CoreBlog.Controllers
         [HttpPost]
         public IActionResult EditBlog(Blog p)
         {
-            var userMail = User.Identity.Name;
+            var userName = User.Identity.Name;
+            var userMail = c.Users.Where(x => x.UserName == userName).Select(y => y.Email).FirstOrDefault();
             var writerID = c.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterID).FirstOrDefault();
+
 
             var blogValue = bm.GetById(p.BlogID);
             p.BlogStatus = true;

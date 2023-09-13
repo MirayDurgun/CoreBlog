@@ -1,6 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationsRules;
-using DataAccessLayer.EntityFramwork;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;

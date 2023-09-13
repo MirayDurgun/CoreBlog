@@ -35,7 +35,7 @@ namespace CoreBlog
             services.AddIdentity<AppUser, AppRole>(x =>
             {
                 x.Password.RequireUppercase = false; //büyük harf mecburiyeti kalkar
-                x.Password.RequireNonAlphanumeric = false; 
+                x.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<Context>();
 
 
@@ -63,7 +63,15 @@ namespace CoreBlog
                 }
                 );
 
-
+            services.ConfigureApplicationCookie(options =>
+            //ConfigureApplicationCookie kimlik doðrulama için kullanýlan çerez ayarlarýný yapýlandýrmak için kullanýlan bir seçenekleri kabul eder
+            {
+                //Cookie Settings
+                options.Cookie.HttpOnly = true; //çerezlerin tarayýcý tarafýndan sadece HTTP istekleri ile eriþilebilir olmasýný saðlar
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(100); // çerezlerin ne kadar süre boyunca geçerli olacaðýný belirtir
+                options.LoginPath = "/Login/Index"; // kimlik doðrulama iþlemi gerektiðinde kullanýcýnýn yönlendirileceði giriþ sayfasýnýn yolunu belirtir
+                options.SlidingExpiration = true; //çerezin süresinin otomatik olarak uzatýlmasýný saðlar
+            });
 
         }
 

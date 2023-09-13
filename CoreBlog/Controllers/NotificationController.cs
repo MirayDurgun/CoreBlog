@@ -1,6 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
-using DataAccessLayer.EntityFramwork;
+using DataAccessLayer.EntityFramework;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;

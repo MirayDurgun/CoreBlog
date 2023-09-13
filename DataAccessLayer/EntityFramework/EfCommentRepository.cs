@@ -7,9 +7,9 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 
-namespace DataAccessLayer.EntityFramwork
+namespace DataAccessLayer.EntityFramework
 {
-	public class EfNewsLetterRepository : GenericRepository<NewsLetter>, INewsLetterDal
-	{
-	}
+    public class EfCommentRepository : GenericRepository<Comment>, ICommentDal
+    {
+    }
 }

@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EntityFramwork
+namespace DataAccessLayer.EntityFramework
 {
-    public class EfAdminRepository : GenericRepository<Admin>, IAdminDal
+    public class EfMessageRepository: GenericRepository<Message>, IMessageDal
     {
     }
 }

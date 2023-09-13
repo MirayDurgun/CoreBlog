@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
-using DataAccessLayer.EntityFramwork;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete

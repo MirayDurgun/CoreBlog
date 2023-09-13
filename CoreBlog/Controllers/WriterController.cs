@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using CoreBlog.Models;
 using DataAccessLayer.Concrete;
-using DataAccessLayer.EntityFramwork;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
