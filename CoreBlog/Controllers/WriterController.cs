@@ -52,6 +52,8 @@ namespace CoreBlog.Controllers
         [AllowAnonymous]
         public PartialViewResult WriterNavbarPartial()
         {
+            var userName = User.Identity.Name;
+            ViewBag.name = userName;
             return PartialView();
         }
         [AllowAnonymous]
