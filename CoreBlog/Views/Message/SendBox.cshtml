@@ -22,7 +22,7 @@
         <tr>
             <td>@item.MessageID</td>
             <td>@item.Subject</td>
-            <td>@item.ReveiverUser.WriterName</td>
+            <td>@item.ReceiverUser.WriterName</td>
             <td>@(((DateTime)item.MessageDate).ToString("d"))</td>
             <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-danger">Mesajı Aç</a></td>
         </tr>

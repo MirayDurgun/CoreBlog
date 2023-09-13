@@ -40,7 +40,7 @@ namespace DataAccessLayer.Concrete
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
             modelBuilder.Entity<Message2>()
-                .HasOne(x => x.ReveiverUser)
+                .HasOne(x => x.ReceiverUser)
                 .WithMany(y => y.WriterReceiver)
                 .HasForeignKey(z => z.ReceiverID)
                 .OnDelete(DeleteBehavior.ClientSetNull);

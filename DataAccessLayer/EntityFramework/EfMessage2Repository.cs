@@ -30,7 +30,7 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var c = new Context())
             {
-                return c.Message2s.Include(x => x.ReveiverUser).Where(y => y.SenderID == id).ToList();
+                return c.Message2s.Include(x => x.ReceiverUser).Where(y => y.SenderID == id).ToList();
             }
 
         }
