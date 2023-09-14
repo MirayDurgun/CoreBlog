@@ -78,5 +78,18 @@ namespace CoreBlog.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+
+        
+        public async Task<IActionResult> DeleteRole(int id)
+        {
+            var values = _roleManager.Roles.FirstOrDefault(x => x.Id == id);
+            var result = await _roleManager.DeleteAsync(values);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(result);
+        }
     }
 }
