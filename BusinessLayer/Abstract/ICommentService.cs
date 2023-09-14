@@ -7,13 +7,15 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Abstract
 {
-	public interface ICommentService
-	{
-		//sadece yorum eklemeye ve listelemeye ihtiyacımız var
-		void CommentAdd(Comment comment);
-		//void CategoryDelete(Category category);
-		//void CategoryUpdate(Category category);
-		List<Comment> GetList(int id);
-		//Category GetCategoryById(int id);
-	}
+    public interface ICommentService
+    {
+        //sadece yorum eklemeye ve listelemeye ihtiyacımız var
+        void CommentAdd(Comment comment);
+        //void CategoryDelete(Category category);
+        //void CategoryUpdate(Category category);
+        List<Comment> GetList(int id);
+        //Category GetCategoryById(int id);
+
+        List<Comment> GetCommentListWithBlog();
+    }
 }
