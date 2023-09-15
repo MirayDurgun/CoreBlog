@@ -107,8 +107,9 @@ namespace CoreBlog.Areas.Admin.Controllers
             //hem kullanıcıları hemde roleri listeleyip iki ayrı tablodan veri çekeceğiz
             var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
             var roles = _roleManager.Roles.ToList();
-            TempData["Userid"] = user.Id;
-            var userRoles = await _userManager.GetRolesAsync(user);
+            TempData["Userid"] = user.Id; //roller tablosundaki bütün rolleri getirir
+
+            var userRoles = await _userManager.GetRolesAsync(user); 
             List<RoleAssignViewModel> model = new List<RoleAssignViewModel>();
             foreach (var item in roles)
             {
