@@ -4,6 +4,7 @@ using DocumentFormat.OpenXml.Office2010.ExcelAc;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -107,9 +108,9 @@ namespace CoreBlog.Areas.Admin.Controllers
             //hem kullanıcıları hemde roleri listeleyip iki ayrı tablodan veri çekeceğiz
             var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
             var roles = _roleManager.Roles.ToList();
-            TempData["Userid"] = user.Id; //roller tablosundaki bütün rolleri getirir
+            TempData["UserId"] = user.Id; //roller tablosundaki bütün rolleri getirir
 
-            var userRoles = await _userManager.GetRolesAsync(user); 
+            var userRoles = await _userManager.GetRolesAsync(user);
             List<RoleAssignViewModel> model = new List<RoleAssignViewModel>();
             foreach (var item in roles)
             {
@@ -120,6 +121,28 @@ namespace CoreBlog.Areas.Admin.Controllers
                 model.Add(m);
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AssingRole(List<RoleAssignViewModel> model)
+        {
+            var userid = (int)TempData["UserId"];
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == userid);
+            foreach (var item in model)
+            {
+                if (item.Exists) //item true isi tiki seçili ise şunları yap
+                {
+                    await _userManager.AddToRoleAsync(user, item.Name);
+                    //Checkbox seçili olanları role tablosuna ekler
+                }
+                else
+                {
+                    await _userManager.RemoveFromRoleAsync(user, item.Name);
+                    //seçili olmayan değerleri listeden siler
+
+                }
+            }
+            return RedirectToAction("UserRoleList");
         }
     }
 }
