@@ -61,6 +61,7 @@ namespace jwt_Core_Project
             }
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
