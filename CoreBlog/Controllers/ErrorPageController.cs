@@ -8,5 +8,9 @@ namespace CoreBlog.Controllers
         {
             return View();
         }
+        public IActionResult AccesDenied()
+        {
+            return View();
+        }
     }
 }

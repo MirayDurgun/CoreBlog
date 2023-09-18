@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,7 +10,7 @@
     <title>Weblog a Blogging Category Bootstrap responsive WebTemplate | Blog3 :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
     <script>
@@ -28,31 +27,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="~/CoreBlogTema/css/style.css" rel='stylesheet' type='text/css' />
     <link href="~/CoreBlogTema/css/fontawesome-all.css" rel="stylesheet">
     <link href="~/CoreBlogTema/fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
-        rel="stylesheet">
+          rel="stylesheet">
 </head>
 
 <body>
     @await Html.PartialAsync("Partial/Container")
     @await Html.PartialAsync("Partial/Header")
 
-
     @RenderBody()
 
-    <!--//main-->
-    <!--footer-->
     @await Html.PartialAsync("Partial/Footer")
-    @*@await Html.PartialAsync("Partial/FooterSocial")*@
 
 
-   
-    <!---->
+    <script src="~/CoreBlogTema/js/jquery-2.2.3.min.js"></script>
+    <script src="~/CoreBlogTema/js/move-top.js"></script>
+    <script src="~/CoreBlogTema/js/easing.js"></script>
 
-    <!-- js -->
-    <script src="~/CoreBlogTema/jsjs/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!--/ start-smoth-scrolling -->
-    <script src="~/CoreBlogTema/jsjs/move-top.js"></script>
-    <script src="~/CoreBlogTema/jsjs/easing.js"></script>
+
     <script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
@@ -63,34 +54,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
     </script>
-    <!--// end-smoth-scrolling -->
+
 
     <script>
         $(document).ready(function () {
-            /*
-                                    var defaults = {
-                                        containerID: 'toTop', // fading element id
-                                        containerHoverID: 'toTopHover', // fading element hover id
-                                        scrollSpeed: 1200,
-                                        easingType: 'linear' 
-                                    };
-                                    */
+
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+
 
             $().UItoTop({
                 easingType: 'easeOutQuart'
             });
-
         });
+
     </script>
     <a href="#home" class="scroll" id="toTop" style="display: block;">
         <span id="toTopHover" style="opacity: 1;"> </span>
     </a>
 
-    <!-- //Custom-JavaScript-File-Links -->
-    <script src="~/CoreBlogTema/jsjs/bootstrap.js"></script>
-
-
+    <script src="~/CoreBlogTema/js/bootstrap.js"></script>
 </body>
-
 </html>
 
