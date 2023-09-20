@@ -22,12 +22,12 @@ namespace CoreBlog.Controllers
             return PartialView();
         }
         [HttpPost]
-        public PartialViewResult PartialAddComment(Comment p)
+        public PartialViewResult PartialAddComment(Comment comment)
         {
-            p.CommentDate = DateTime.Parse(DateTime.Now.ToString());
-            p.CommentStatus = true;
-            p.BlogID = 2;
-            cm.CommentAdd(p);
+            comment.CommentDate = DateTime.Parse(DateTime.Now.ToString());
+            comment.CommentStatus = true;
+            comment.BlogID = comment.CommentID;
+            cm.CommentAdd(comment);
             return PartialView();
         }
         public PartialViewResult CommentListByBlog(int id)

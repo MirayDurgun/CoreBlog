@@ -25,8 +25,7 @@ namespace CoreBlog.Controllers
         {
             _userManager = userManager;
         }
-
-        [Authorize]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var userMail = User.Identity.Name;
@@ -41,11 +40,6 @@ namespace CoreBlog.Controllers
             return View();
         }
         public IActionResult WriterMail()
-        {
-            return View();
-        }
-        [AllowAnonymous]
-        public IActionResult Test()
         {
             return View();
         }
@@ -87,12 +81,12 @@ namespace CoreBlog.Controllers
             }
 
             var result = await _userManager.UpdateAsync(values);
-           
+
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Dashboard");
             }
-            return RedirectToAction("Index","Login");
+            return RedirectToAction("Index", "Login");
 
         }
         [AllowAnonymous]
