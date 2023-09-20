@@ -32,17 +32,6 @@
                                             <i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogCreateDate).ToString("d"))
                                         </a>
                                     </li>
-                                    <li class="mx-2">
-                                        <a href="#">
-                                            <i class="far fa-thumbs-up"></i> 0 Beğeni
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="far fa-comment"></i> 0 Yorum
-                                        </a>
-                                    </li>
-
                                 </ul>
                             </div>
                         </div>
@@ -75,29 +64,6 @@
                     @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
                     @await Component.InvokeAsync("CategoryList")
                     @await Component.InvokeAsync("WriterLastBlog")
-                    <div class="single-gd my-5 tech-btm">
-                        <h4>Our Progress</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                    </div>
                     <div class="single-gd tech-btm">
                         <h4>Son Eklenen Post</h4>
                         <div class="blog-grids">
