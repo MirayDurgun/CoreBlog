@@ -20,7 +20,7 @@
                                 <th> # </th>
                                 <th> Başlık </th>
                                 <th> Kategori </th>
-                                <th> Yayınlama Tarihi </th>
+                                <th> Tarih </th>
                                 <th> Detaylar </th>
                             </tr>
                         </thead>
@@ -31,10 +31,43 @@
                                     <td>
                                         <img src="@item.BlogImage" class="mr-2" alt="image"> @ViewBag.name
                                     </td>
-                                    <td>@item.BlogTitle</td>
-                                    <td>
-                                        <label class="badge badge-gradient-success">@item.Category.CategoryName</label>
-                                    </td>
+                                    <td><a href="/Blog/BlogListByWriter/@item.BlogID">@item.BlogTitle</a></td>
+                                    @if (item.CategoryID == 1)
+                                    {
+                                        <td>
+                                            <label class="badge badge-gradient-success">@item.Category.CategoryName</label>
+                                        </td>
+                                    }
+                                    @if (item.CategoryID == 2)
+                                    {
+                                        <td>
+                                            <label class="badge badge-gradient-primary">@item.Category.CategoryName</label>
+                                        </td>
+                                    }
+                                    @if (item.CategoryID == 3)
+                                    {
+                                        <td>
+                                            <label class="badge badge-gradient-warning">@item.Category.CategoryName</label>
+                                        </td>
+                                    }
+                                    @if (item.CategoryID == 4)
+                                    {
+                                        <td>
+                                            <label class="badge badge-gradient-info">@item.Category.CategoryName</label>
+                                        </td>
+                                    }
+                                    @if (item.CategoryID == 5)
+                                    {
+                                        <td>
+                                            <label class="badge badge-gradient-danger">@item.Category.CategoryName</label>
+                                        </td>
+                                    }
+                                    @if (item.CategoryID > 5)
+                                    {
+                                        <td>
+                                            <label class="badge btn-gradient-dark">@item.Category.CategoryName</label>
+                                        </td>
+                                    }
                                     <td> @(((DateTime)item.BlogCreateDate).ToString("d")) </td>
                                     <td>
                                         <a href="/Blog/BlogReadAll/@item.BlogID" class="btn btn-dark">Detaylar</a>
@@ -48,3 +81,7 @@
         </div>
     </div>
 </div>
+
+
+
+

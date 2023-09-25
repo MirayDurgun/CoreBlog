@@ -4,15 +4,10 @@
     <h6 class="p-3 mb-0">Bildirimler</h6>
     @foreach (var item in Model)
     {
-        @* <div class="preview-icon bg-warning"> *@
-
-        @* <i class="mdi mdi-settings"></i> *@
-
         <div class="dropdown-divider"></div>
         <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
                 <div class="@item.NotificationColor">
-                    @* <i class="mdi mdi-calendar"></i> *@
                     <i class=@item.NotificationTypeSymbol></i>
                 </div>
             </div>

@@ -94,6 +94,7 @@ namespace CoreBlog.Controllers
             }
             return View();
         }
+
         public IActionResult DeleteBlog(int id)
         {
             var blogvalue = bm.GetById(id);

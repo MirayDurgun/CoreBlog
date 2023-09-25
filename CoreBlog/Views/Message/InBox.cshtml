@@ -22,7 +22,7 @@
             <td>@item.Subject</td>
             <td>@item.SenderUser.WriterName</td>
             <td>@(((DateTime)item.MessageDate).ToString("d"))</td>
-            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-danger">Aç</a></td>
+            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-success">Aç</a></td>
             <th><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-danger">Sil</a></th>
 
         </tr>
