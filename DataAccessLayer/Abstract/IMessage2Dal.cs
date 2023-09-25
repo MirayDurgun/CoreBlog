@@ -12,7 +12,7 @@ namespace DataAccessLayer.Abstract
         List<Message2> GetInboxWithMessageByWriter(int id);
         List<Message2> GetSendboxWithMessageByWriter(int id);
         //List<Message2> GetListWithMessageBySender(int id);
-        //List<Message2> GetListWithMessageByReceiver(int id);
+
 
     }
 }

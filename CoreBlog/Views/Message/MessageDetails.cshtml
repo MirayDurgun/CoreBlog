@@ -1,15 +1,15 @@
-﻿@model EntityLayer.Concrete.Message
+﻿@model EntityLayer.Concrete.Message2
 @{
     ViewData["Title"] = "MessageDetails";
     Layout = "~/Views/Shared/WriterLayout.cshtml";
 }
 
-<h1>Mesaj Detay Sayfası</h1>
+ <h1>Mesaj Detay Sayfası</h1>
 
 @Html.Label("Mesaj ID")
 @Html.TextBoxFor(x=>x.MessageID,new{@class="form-control"})
 <br />
-@Html.Label("Mesaj Başlığı")
+@Html.Label("Mesaj Konusu")
 @Html.TextBoxFor(x=>x.Subject,new{@class="form-control"})
 <br />
 @Html.Label("Mesaj İçeirği")
@@ -17,4 +17,3 @@
 <br />
 <br />
 <button class="btn btn-success">Mesajlara Dön</button>
-

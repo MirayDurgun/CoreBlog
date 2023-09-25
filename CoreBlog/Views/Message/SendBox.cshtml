@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "SendBox";
     Layout = "~/Views/Shared/WriterLayout.cshtml";
+    int count = 0;
 }
 
 <h1>Giden Kutusu</h1>
@@ -12,22 +13,20 @@
         <th>Alıcı</th>
         <th>Tarih</th>
         <th>Mesajı Aç</th>
-        <th> Sil</th>
-        <th>Güncelle</th>
+        <th>Mesajı Sil</th>
     </tr>
     @foreach (var item in Model)
     {
+        count++;
         //writer idye göre getirir
         <tr>
-            <td>@item.MessageID</td>
+            <td>@count</td>
             <td>@item.Subject</td>
             <td>@item.ReceiverUser.WriterName</td>
             <td>@(((DateTime)item.MessageDate).ToString("d"))</td>
-            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-danger">Mesajı Aç</a></td>
+            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-danger">Aç</a></td>
+            <th><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-danger">Sil</a></th>
         </tr>
     }
 </table>
-<br />
 <a href="/Message/SendMessage/" class="btn btn-primary">Yeni Mesaj Oluştur</a>
-
-

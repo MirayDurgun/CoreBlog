@@ -4,13 +4,18 @@
     Layout = "~/Views/Shared/WriterLayout.cshtml";
 }
 
-<h1>Yeni Mesaj Oluştur</h1>
+ <h1>Yeni Mesaj Oluştur</h1>
 <br />
 @using (Html.BeginForm("SendMessage", "Message", FormMethod.Post))
 {
-    @Html.Label("Alıcı")
-    @* @Html.TextBoxFor(x=>x.,new{@class="form-control"}) *@
-    <input type="text" class="form-control" />
+    <div class="form-group">
+        <label for="ReceiverID">Alıcı Seçimi</label>
+        @Html.DropDownListFor(x=>x.ReceiverID, (List<SelectListItem>)ViewBag.v1, new{@class="form-control"})
+    </div> 
+
+   @*  @Html.Label("Alıcı")
+     @Html.TextBoxFor(x=>x.,new{@class="form-control"}) 
+    <input type="text" class="form-control" /> *@
     <br />
     @Html.Label("Mesaj Konusu")
     @Html.TextBoxFor(x=>x.Subject,new{@class="form-control"})
@@ -18,6 +23,7 @@
     @Html.Label("Mesajınız")
     @Html.TextBoxFor(x=>x.MessageDetails,new{@class="form-control"})
     <br />
-    <br />
+    <br />  
     <button class="btn btn-info">Gönder</button>
 }
+ 
