@@ -6,9 +6,7 @@ Asp.Net Core 5.0 Proje Kampı
 
 
 ## Proje Hakkında: 
-ASP.Net Core 5.0 ile Entity Framework Core, N Tier Architechture mimarisini API'lerle destekleyerek Codefirst yaklaşımı ile veritabanı olarak SQL Server kullanılarak kodlanmıştır.
-Proje Kullanıcı, Yazar ve Admin Panelli bir Blog sitesidir.
-
+ASP.NET Core 5.0 ile geliştirilen bu proje, **Entity Framework Core** ve **N-Tier Architecture** mimarisi kullanılarak, API’ler aracılığıyla desteklenen bir blog sitesidir. **Code-First** yaklaşımı ile veritabanı olarak **SQL Server** kullanılmıştır ve kullanıcı, yazar ve admin paneli özellikleri sunulmuştur. Projede, **Entity Framework Repository**, **Partial View**, **Await Async**, **ViewComponent**, **HttpGet** ve **HttpPost** metodları ile veri işlemleri yapılmış, **Fluent Validation** ile form doğrulama sağlanmıştır. **Authentication** ve **Authorization** işlemleri gerçekleştirilmiş, **Session** ile oturum yönetimi yapılmış ve **Refactoring** ile **Generic Service** yapıları oluşturulmuştur. Ayrıca, **Parametreli Trigger** kullanımı, dinamik ve statik bilgilerin **Excel raporu** olarak sunulması, API ile hava durumu verisi çekilmesi ve **Ajax** ile ekleme, silme ve güncelleme işlemleri tamamlanmıştır. **Swagger** kullanılarak API testleri yapılmış, **API Get List** işlemleri oluşturulmuş ve **Identity** ile giriş yapan kullanıcıların verilerine erişim sağlanmıştır. Son olarak, **Json Web Token (JWT)** ile güvenli kullanıcı işlemleri yönetilmiştir.
 ## Proje Aşamaları:
 * Entity Framework Repository oluşturuldu.
 * Partial View ve Await Async kullanıldı
